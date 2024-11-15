@@ -3,12 +3,12 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const faraonroutes = require('./routes/Faraon.routes')
 const PORT = 3000
-const http = require('http');
-const socketIo = require('socket.io');
+const cors = require('cors');
 
 
 const app = express()
 
+app.use(cors())
 app.use(express.static('public'))
 
 app.use(express.json())
